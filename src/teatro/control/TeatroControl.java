@@ -27,6 +27,7 @@ public class TeatroControl {
         System.out.println("5-mostrar teatro");
         System.out.println("6-Cambiar silla");
         System.out.println("7-Ocupacion Teatro");
+        System.out.println("8-buscar cliente");
 
     }
     //iniciar un teatro
@@ -85,6 +86,7 @@ public class TeatroControl {
                     break;
                 ////// 
                 case 5:
+                 
                     Teatro.mostarteatro();
                     break;
 //////////
@@ -95,6 +97,8 @@ public class TeatroControl {
                 case 7:
                     Teatro.llenuraTeatro();
                     break;
+                case 8:
+                    buscar(Teatro);
             }
 
         } while (opcion != 0);
@@ -136,7 +140,13 @@ public class TeatroControl {
         int silla = sc.nextInt();
         Cliente cambio = Teatro.registro(silla);
         //
-
+ 
     }
-
+ private static void buscar(Teatro Teatro) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Escriba el Id del usuario a Buscar");
+        int IDbuscar = sc.nextInt();
+        Cliente cliente = Teatro.buscarCliente(IDbuscar);
+   
+    }
 }
