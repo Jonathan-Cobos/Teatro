@@ -8,28 +8,23 @@ package teatro.control;
  *
  * @author Acer
  */
-
-
-   
-
 public class Cliente {
-    
+
     //constante
-        public final static int general=2;
-      public final static int VIP=1;
+    public final static int general = 2;
+    public final static int VIP = 1;
 //atributo
     private String nombre;
-     private String apellido;
-     private int ID;
-     private int Boleto;
-     private String entrada;
-     private int silla;
-  
-//constructo
+    private String apellido;
+    private int ID;
+    private int Boleto;
+    private String entrada;
+    private int silla;
 
+//constructo
     public Cliente() {
-        this.nombre=" ";
-        this.apellido=" ";
+        this.nombre = " ";
+        this.apellido = " ";
     }
 
     public Cliente(String nombre, String apellido, int ID, int Boleto, String entrada) {
@@ -38,13 +33,10 @@ public class Cliente {
         this.ID = ID;
         this.Boleto = Boleto;
         this.entrada = entrada;
-        this.silla=1;
+        this.silla = 1;
     }
 
-    
-   
     //get y set
-
     public String getNombre() {
         return nombre;
     }
@@ -93,24 +85,10 @@ public class Cliente {
         this.silla = silla;
     }
 
-  
-    
-    
     //to string
-    @Override   
+    @Override
     public String toString() {
         return "Cliente{" + "nombre=" + nombre + ", apellido=" + apellido + ", ID=" + ID + ", Boleto (VIP=1 General=2) = " + Boleto + ", Entrada=" + entrada + ", silla=" + silla + '}';
     }
-
-    
-     
-
-
-
-
-
-
-
-
 
 }
