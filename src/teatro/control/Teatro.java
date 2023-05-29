@@ -11,6 +11,7 @@ import java.util.Scanner;
  * @author Acer
  */
 public class Teatro {
+
     //atributos
     //vip
     private Silla V1;
@@ -66,23 +67,18 @@ public class Teatro {
     private Silla G49;
     private Silla G50;
     private String marca;
-    
-    
-    
-    
-    
+
     //demas atributos
     private String nombreT;
     private Cliente[] clientes;
     private int tamano;
-   
-    
+
 //arreglo cliente y constructo
-    public Teatro(){
+    public Teatro() {
 
 //sillas
         //vip
-    V1 = new Silla(Silla.V1);
+        V1 = new Silla(Silla.V1);
         this.V2 = new Silla(Silla.V2);
         this.V3 = new Silla(Silla.V3);
         this.V4 = new Silla(Silla.V4);
@@ -163,7 +159,7 @@ public class Teatro {
         this.G27.setMarca("27");
         this.G28.setMarca("28");
         this.G29.setMarca("29");
-            this.G30.setMarca("30");
+        this.G30.setMarca("30");
         this.G31.setMarca("31");
         this.G32.setMarca("32");
         this.G33.setMarca("33");
@@ -173,7 +169,7 @@ public class Teatro {
         this.G37.setMarca("37");
         this.G38.setMarca("38");
         this.G39.setMarca("39");
-    this.G40.setMarca("40");
+        this.G40.setMarca("40");
         this.G41.setMarca("41");
         this.G42.setMarca("42");
         this.G43.setMarca("43");
@@ -182,22 +178,20 @@ public class Teatro {
         this.G46.setMarca("46");
         this.G47.setMarca("47");
         this.G48.setMarca("48");
-        this.G49.setMarca("49");        
-         this.G50.setMarca("50");   
+        this.G49.setMarca("49");
+        this.G50.setMarca("50");
         //
         this.marca = " ";
         //////////11
-    //inicializar cliente        
-clientes=new Cliente[tamano];
-    for (int i=0;i<tamano;i++ ){
-        clientes[i]= new Cliente();
-    }
-    
-    }
-    
-    
-    //constucto
+        //inicializar cliente        
+        clientes = new Cliente[tamano];
+        for (int i = 0; i < tamano; i++) {
+            clientes[i] = new Cliente();
+        }
 
+    }
+
+    //constucto
     public Teatro(Silla V1, Silla V2, Silla V3, Silla V4, Silla V5, Silla V6, Silla V7, Silla V8, Silla G9, Silla G10, Silla G11, Silla G12, Silla G13, Silla G14, Silla G15, Silla G16, Silla G17, Silla G18, Silla G19, Silla G20, Silla G21, Silla G22, Silla G23, Silla G24, Silla G25, Silla G26, Silla G27, Silla G28, Silla G29, Silla G30, Silla G31, Silla G32, Silla G33, Silla G34, Silla G35, Silla G36, Silla G37, Silla G38, Silla G39, Silla G40, Silla G41, Silla G42, Silla G43, Silla G44, Silla G45, Silla G46, Silla G47, Silla G48, Silla G49, Silla G50, String marca, String nombreT, Cliente[] clientes, int tamano) {
         this.V1 = V1;
         this.V2 = V2;
@@ -255,10 +249,7 @@ clientes=new Cliente[tamano];
         this.tamano = tamano;
     }
 
- 
-    
     //get y set
-
     public String getNombreT() {
         return nombreT;
     }
@@ -283,8 +274,7 @@ clientes=new Cliente[tamano];
         this.tamano = tamano;
     }
 //sillas get y set 
-    
-    
+
     public Silla getV1() {
         return V1;
     }
@@ -553,8 +543,6 @@ clientes=new Cliente[tamano];
         return G34;
     }
 
-    
-    
     public void setG34(Silla G34) {
         this.G34 = G34;
     }
@@ -686,7 +674,8 @@ clientes=new Cliente[tamano];
     public void setG50(Silla G50) {
         this.G50 = G50;
     }
-   public String getMarca() {
+
+    public String getMarca() {
         return marca;
     }
 
@@ -694,111 +683,97 @@ clientes=new Cliente[tamano];
         this.marca = marca;
     }
 
-    
-    
-    
-    
-    
-    
-    
     //string
-
     @Override
     public String toString() {
-        String cadena="Teatro{" + "nombreT=" + nombreT +  '}';
-        for(int i=0;i<tamano;i++){
-        cadena= cadena +"\n Cliente" + clientes[i].toString();
-        
+        String cadena = "Teatro{" + "nombreT=" + nombreT + '}';
+        for (int i = 0; i < tamano; i++) {
+            cadena = cadena + "\n Cliente" + clientes[i].toString();
+
         }
         return cadena;
     }
+
     //inicializar cliente
-     public void inicializarcliente(int cantidad) {
+    public void inicializarcliente(int cantidad) {
         this.tamano = cantidad;
         //Instanciar el arreglo de productos
         clientes = new Cliente[tamano];
 
         //Inicializar cada producto del arreglo
         for (int i = 0; i < tamano; i++) {
-           clientes[i] = new Cliente();
-        clientes[i].setSilla(1+i);
+            clientes[i] = new Cliente();
+            clientes[i].setSilla(1 + i);
         }
     }
-    
-  
 
- 
-   
-  
-     public Cliente eliminarCliente(int ID){
-   
-         //Recorrer arreglo de productos
-        for(int i=0;i<tamano;i++){
-            
-            if (clientes[i].getID()==ID){
-                
+    public Cliente eliminarCliente(int ID) {
+
+        //Recorrer arreglo de productos
+        for (int i = 0; i < tamano; i++) {
+
+            if (clientes[i].getID() == ID) {
+
                 clientes[i].setNombre("");
-                    clientes[i].setApellido("");
-       clientes[i].setApellido("");
-       clientes[i].setBoleto(0);
-       clientes[i].setEntrada("");
-       clientes[i].setID(0);
-       
-            } 
-               
-              }
+                clientes[i].setApellido("");
+                clientes[i].setApellido("");
+                clientes[i].setBoleto(0);
+                clientes[i].setEntrada("");
+                clientes[i].setID(0);
+
+            }
+
+        }
         return null;
     }
-     
-     //registrar cliente
-     public Cliente registro(int silla){
 
-       
-        for(int i=0;i<tamano;i++){
-           
-           Scanner sc= new Scanner(System.in);
-     if(silla==clientes[i].getSilla()){
-        System.out.println("Vienvenido,digite sus datos");
-        System.out.println("Nombre: ");
-        String nombre= sc.next();
-        clientes[i].setNombre(nombre);
-        System.out.println("Apellido");
-        String apellido= sc.next();
-        clientes[i].setApellido(apellido);
-        System.out.println("ID");
-        int ID=sc.nextInt();
-        clientes[i].setID(ID);
-       
-        //tipo de voleto
-        if(clientes[i].getSilla()<9){
-            clientes[i].setBoleto(1);
-        }
-        else{if(clientes[i].getSilla()>8){
-            clientes[i].setBoleto(2);
-        }
-      //marca
-        switch (clientes[i].getBoleto()) {
-            case 1:
-                clientes[i].setEntrada("V");
-                break;
-            case 2:
-                clientes[i].setEntrada("G");
-                break;
-            default:
-                throw new AssertionError();
-        }
-        
-              }
-        
-        }
+    //registrar cliente
+    public Cliente registro(int silla) {
+
+        for (int i = 0; i < tamano; i++) {
+
+            Scanner sc = new Scanner(System.in);
+            if (silla == clientes[i].getSilla()) {
+                System.out.println("Vienvenido,digite sus datos");
+                System.out.println("Nombre: ");
+                String nombre = sc.next();
+                clientes[i].setNombre(nombre);
+                System.out.println("Apellido");
+                String apellido = sc.next();
+                clientes[i].setApellido(apellido);
+                System.out.println("ID");
+                int ID = sc.nextInt();
+                clientes[i].setID(ID);
+
+                //tipo de voleto
+                if (clientes[i].getSilla() < 9) {
+                    clientes[i].setBoleto(1);
+                } else {
+                    if (clientes[i].getSilla() > 8) {
+                        clientes[i].setBoleto(2);
+                    }
+                    //marca
+                    switch (clientes[i].getBoleto()) {
+                        case 1:
+                            clientes[i].setEntrada("V");
+                            break;
+                        case 2:
+                            clientes[i].setEntrada("G");
+                            break;
+                        default:
+                            throw new AssertionError();
+                    }
+
+                }
+
+            }
         }
         return null;
-         
-       //mostrar teatro
-     
-      
-      }
-     public void mostarteatro() {
+
+        //mostrar teatro
+    }
+
+    public void mostarteatro() {
 
         System.out.println("---------------------");
         System.out.println("|" + V1.getMarca() + "|" + "    " + "|" + V2.getMarca() + "|" + " " + "|" + V3.getMarca() + "|" + "    " + "|" + V4.getMarca() + "|");
@@ -813,16 +788,13 @@ clientes=new Cliente[tamano];
         System.out.println("|" + G33.getMarca() + "|" + "|" + G34.getMarca() + "|" + "|" + G35.getMarca() + "|" + " " + "|" + G36.getMarca() + "|" + "|" + G37.getMarca() + "|" + "|" + G38.getMarca() + "|");
         System.out.println("|" + G39.getMarca() + "|" + "|" + G40.getMarca() + "|" + "|" + G41.getMarca() + "|" + " " + "|" + G42.getMarca() + "|" + "|" + G43.getMarca() + "|" + "|" + G44.getMarca() + "|");
         System.out.println("|" + G45.getMarca() + "|" + "|" + G46.getMarca() + "|" + "|" + G47.getMarca() + "|" + " " + "|" + G48.getMarca() + "|" + "|" + G49.getMarca() + "|" + "|" + G50.getMarca() + "|");
-    
-        
-      
-      }
-     
-        public void llenuraTeatro() {
+
+    }
+
+    public void llenuraTeatro() {
         // inicializar un contador por cada tipo
         int VIP = 0;
         int General = 0;
-       
 
         //Recorrer el arreglo de productos
         for (int i = 0; i < this.tamano; i++) {
@@ -833,30 +805,13 @@ clientes=new Cliente[tamano];
                 case 2:
                     General++;
                     break;
-               
+
             }
         }
-        System.out.println("En el Teatro hay " + VIP+ " sillas VIP ocupadas lo cual es " + (VIP*100/50)+"% del teatro");
-        System.out.println("En el Teatro hay " + General+ " sillas Generales ocupadas lo cual es " +(VIP*100/50)+"% del teatro"  );
-            System.out.println("El teatro esta " + (( VIP + General)*100/50)+"% lleno" );
-    
+        System.out.println("En el Teatro hay " + VIP + " sillas VIP ocupadas lo cual es " + (VIP * 100 / 50) + "% del teatro");
+        System.out.println("En el Teatro hay " + General + " sillas Generales ocupadas lo cual es " + (VIP * 100 / 50) + "% del teatro");
+        System.out.println("El teatro esta " + ((VIP + General) * 100 / 50) + "% lleno");
+
     }
-     
-     
-     
-     
-     
-      }
 
-
- 
- 
-
-   
-  
-     
-     
-     
-     
-     
-
+}
