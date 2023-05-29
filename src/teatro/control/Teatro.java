@@ -753,28 +753,31 @@ public class Teatro {
                         clientes[i].setBoleto(2);
                     }
                     //marca
-                    switch (clientes[i].getBoleto()) {
+                   
+                    }
+
+                 switch (clientes[i].getBoleto()) {
                         case 1:
                             clientes[i].setEntrada("V");
+                            
                             break;
                         case 2:
                             clientes[i].setEntrada("G");
                             break;
                         default:
                             throw new AssertionError();
-                    }
-
                 }
 
             }
         }
         return null;
+       
 
         //mostrar teatro
     }
 
     public void mostarteatro() {
-
+    
         System.out.println("---------------------");
         System.out.println("|" + V1.getMarca() + "|" + "    " + "|" + V2.getMarca() + "|" + " " + "|" + V3.getMarca() + "|" + "    " + "|" + V4.getMarca() + "|");
         System.out.println("---------------------");
@@ -788,8 +791,12 @@ public class Teatro {
         System.out.println("|" + G33.getMarca() + "|" + "|" + G34.getMarca() + "|" + "|" + G35.getMarca() + "|" + " " + "|" + G36.getMarca() + "|" + "|" + G37.getMarca() + "|" + "|" + G38.getMarca() + "|");
         System.out.println("|" + G39.getMarca() + "|" + "|" + G40.getMarca() + "|" + "|" + G41.getMarca() + "|" + " " + "|" + G42.getMarca() + "|" + "|" + G43.getMarca() + "|" + "|" + G44.getMarca() + "|");
         System.out.println("|" + G45.getMarca() + "|" + "|" + G46.getMarca() + "|" + "|" + G47.getMarca() + "|" + " " + "|" + G48.getMarca() + "|" + "|" + G49.getMarca() + "|" + "|" + G50.getMarca() + "|");
-
+        
+        
+  
     }
+
+    
 
     public void llenuraTeatro() {
         // inicializar un contador por cada tipo
@@ -813,5 +820,19 @@ public class Teatro {
         System.out.println("El teatro esta " + ((VIP + General) * 100 / 50) + "% lleno");
 
     }
+  public Cliente buscarCliente(int ID) {
 
+        //Recorrer arreglo de productos
+        for (int i = 0; i < tamano; i++) {
+
+            if (clientes[i].getID() == ID) {
+
+                System.out.println(clientes[i].toString());
+              
+
+            }
+
+        }
+        return null;
+    }
 }
